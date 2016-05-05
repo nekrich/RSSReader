@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10174" systemVersion="15E65" minimumToolsVersion="Automatic">
+    <entity name="RSSFeed" representedClassName=".RSSFeed" syncable="YES">
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="urlString" attributeType="String" syncable="YES"/>
+        <relationship name="items" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="RSSItem" inverseName="feed" inverseEntity="RSSItem" syncable="YES"/>
+    </entity>
+    <entity name="RSSItem" representedClassName=".RSSItem">
+        <attribute name="deletionMark" optional="YES" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
+        <attribute name="guid" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="itemDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="publishDate" attributeType="Date" indexed="YES">
+            <userInfo/>
+        </attribute>
+        <attribute name="read" optional="YES" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="urlString" attributeType="String" syncable="YES"/>
+        <relationship name="feed" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="RSSFeed" inverseName="items" inverseEntity="RSSFeed" syncable="YES"/>
+        <userInfo/>
+    </entity>
+    <elements>
+        <element name="RSSFeed" positionX="261" positionY="243" width="128" height="90"/>
+        <element name="RSSItem" positionX="261" positionY="189" width="128" height="165"/>
+    </elements>
+</model>
